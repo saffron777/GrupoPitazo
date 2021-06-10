@@ -1,0 +1,42 @@
+﻿@using GP.Core.Models.ViewModels
+@model DatosHipodromoViewModel
+@{
+    ViewData["Title"] = "CargarHipodromo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var hoy = DateTime.Now.TimeOfDay.ToString("hh\\:mm");    
+
+
+
+}
+    <style>
+        div.container { max-width: 1200px }
+    </style>
+<input type="hidden" id="TipoForm" value="@ViewBag.TipoForm" />
+<input type="hidden" id="HActionHome" value="@Url.Action("Index", "Home")" />
+<input type="hidden" id="HAction" value="@Url.Action("BuscarCarrerasPartialView", "Hipodromo")" />
+<input type="hidden" id="HActionHip" value="@Url.Action("CargarHipodromos", "Hipodromo")" />
+<input type="hidden" id="HActionVacio" value="@Url.Action("BuscarInfoVaciaPartialView", "Hipodromo")" />
+<input type="hidden" id="HHipodromoHandler" value="@Url.Action("AjaxHandler","Hipodromo")" />
+<input type="hidden" id="HActionSave" value="@Url.Action("Guardar","Hipodromo")" />
+<input type="hidden" id="HActionDel" value="@Url.Action("EliminarEjemplar", "Hipodromo")" />
+<input type="hidden" id="HToday" value="@hoy" />
+
+<div id="msgBox"></div>
+<div class="card-body">
+    <form><div id="findView"></div></form>
+    <hr id="divisor" class="sidebar-divider">
+    <br />
+
+    @*<form id="frmData" name="frmData" onsubmit="return checkForm(this);" data-ajax="true"  data-ajax-method="POST" data-ajax-success="" asp-antiforgery="true" asp-controller="Hipodromo" asp-action="Guardar">*@
+    <form id="frmData" name="frmData">
+            <div id="dataView"></div>
+    </form>
+
+</div>
+
+
+
+@section Scripts {
+    <script src="~/js/HipodromoController.js"></script>
+
+}

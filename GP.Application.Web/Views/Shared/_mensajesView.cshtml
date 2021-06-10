@@ -1,0 +1,69 @@
+﻿
+@model List<MensajeViewModel>
+<div class="modal fade" id="msg-board" tabindex="-1" role="dialog" aria-labelledby="msg-board" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <div class="box-content-modal">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th class="aviso">Aviso</th>
+                                <th class="fecha">Fecha</th>
+                                <th class="control">Control</th>
+                            </tr>
+                        </thead>
+                        <tbody>                           
+
+                            @foreach (var msj in Model)
+                            {
+                                <tr>
+                                    <td>@msj.TicketNro</td>
+                                    <td>@msj.Fecha.ToShortDateString()</td>
+                                    <td>@msj.Status</td>
+                                </tr>
+                                @if (msj.Aceptaciones != null && msj.Aceptaciones.Count > 0)
+                                {
+                                    <tr>
+                                        <td colspan="3">
+                                            <div class="rk-description">
+                                                <ul class="list-inline">
+
+                                                    @foreach (var item in msj.Aceptaciones)
+                                                    {
+                                                        <li class="list-inline-item">
+                                                            @item.Usuario | @item.TipoJugada | @item.Monto.ToString("n")
+                                                        </li>
+                                                        <br />
+                                                    }
+
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                }
+                                else
+                                {
+                                    <tr>
+                                        <td colspan="3">
+                                            <div class="rk-description">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item">
+                                                        @msj.HipodromoId | @msj.TipoJugada | @msj.Monto.ToString("n")
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

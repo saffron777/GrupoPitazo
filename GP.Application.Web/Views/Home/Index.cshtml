@@ -1,0 +1,69 @@
+﻿@using Microsoft.AspNetCore.Http
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row">
+    <div id="hipodromosview" class="col-md-4 col-xs-12">@Html.Partial("_HipodromosView")</div>
+    <div id="ejemplaresview" class="col-md-4 col-xs-12">@Html.Partial("_EjemplaresView")</div>
+    <div id="jugadasview" class="col-md-4 col-xs-12">@Html.Partial("_JugadasMenuView")</div>
+</div>
+<div class="rk-box-radio rk-hide-custom">
+    <label class="box-container-radio">
+        <span class="bar-text">|</span> FILTRO
+    </label>
+    <label class="box-container-radio">
+        <span class="bar-text">|</span> Solo Jugadas
+        <input type="radio" checked="checked" name="radio">
+        <span class="checkmark"></span>
+    </label>
+    <label class="box-container-radio">
+        <span class="bar-text">|</span>
+        Solo Banqueadas
+        <input type="radio" name="radio">
+        <span class="checkmark"></span>
+    </label>
+    <label class="box-container-radio">
+        <span class="bar-text">|</span>Todas
+        <input type="radio" name="radio">
+        <span class="checkmark"></span>
+    </label>
+</div>
+<ul class="list-inline rk-hide-html-bootstrap">
+    <li class="list-inline-item">FILTRO <span>|</span></li>
+    <li class="list-inline-item"><input type="radio" id="rbFiltroActivas" name="rbFiltro" value="JACTIVAS" />Jugadas Activas<span>|</span></li>
+    <li class="list-inline-item"><input type="radio" id="rbFiltroConcretadas" name="rbFiltro" value="JCONCRETADAS" />Jugadas Concretadas<span>|</span></li>
+    <li class="list-inline-item"><input type="radio" id="rbFiltroMis" name="rbFiltro" value="JMISJUGADAS" />Mis Jugadas<span>|</span></li>
+    <li class="list-inline-item"><input type="radio" id="rbFiltroTotos" name="rbFiltro" value="JTODAS" checked="checked" />Todas<span>|</span> </li>
+    <li class="list-inline-item">
+        <input type="radio" id="rbFiltroHipodromos" name="rbFiltro" value="JHIP" />
+        <div id="panelFilterHip" class="btn-group">
+            <button id="btnFilterHip" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Hipodromo
+            </button>
+            <div id="ddlHipFilter" class="dropdown-menu dropdown-menu-right">
+
+            </div>
+        </div>
+        <span>|</span>
+    </li>
+    <li class="list-inline-item"><button id="btnRefresh" type="button" class="btn btn-warning">Refresh</button></li>
+</ul>
+<div id="table-info">@Html.Partial("_tableInfoView")</div>
+
+@section Scripts {
+    @*<script src="/socket.io/socket.io.js"></script>*@
+    <script>
+        
+        var usrid = '@Context.Session.GetString("id")';
+        var idagente = @Context.Session.GetInt32("idagente");
+        var agente = '@Context.Session.GetString("agente")';
+        var currency = '@Context.Session.GetString("currency")';
+        var saldo = '@Context.Session.GetString("saldo")';
+        var comision = '@Context.Session.GetString("comision")';
+
+    </script>
+    <script src="~/js/HomeController.js"></script>
+
+}
+

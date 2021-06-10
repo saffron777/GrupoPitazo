@@ -1,0 +1,52 @@
+﻿
+    
+        <div id="hipodomoPanel" class="box-head button-head">
+            <div class="dropdown open">
+                <button class="btn btn-secondary btn-block dropdown-toggle" type="button" id="btnHipodromos" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span id="hipName">HIPODROMO</span>
+                </button>
+                @Html.Hidden("HHipodromoId")
+                @Html.Hidden("HCarreraId")
+                @*@Html.Hidden("HCarrerasAction", @Url.Action("CargarCarreras", "Home"))
+                @Html.Hidden("HEjemplaresAction", @Url.Action("CargarEjemplares", "Home"))
+                @Html.Hidden("HTipoJugadas", @Url.Action("CargarTipoJugadas", "Home"))
+                @Html.Hidden("HMisJugadas", @Url.Action("CargarMisJugadas", "Home"))
+                @Html.Hidden("HTodasJugadas", @Url.Action("CargarTodasJugadas", "Home"))
+                @Html.Hidden("HTodasJugadasConcretadas", @Url.Action("CargarTodasJugadasConcretadas", "Home"))
+                @Html.Hidden("HTodasJugadasHipodromos", @Url.Action("CargarTodasJugadasHipodromos", "Home"))
+                @Html.Hidden("HNewJugadas", @Url.Action("CargarNuevasJugadas", "Home"))
+                @Html.Hidden("HJugadaCardView", @Url.Action("CargarJugadaCardView", "Home"))
+                @Html.Hidden("HOtrosJugadas", @Url.Action("CargarJugadasOtrosUsuarios", "Home"))
+                @Html.Hidden("HGuardarAceptacion", @Url.Action("GuardarAceptacion", "Home"))
+                @Html.Hidden("HLocacion", @Url.Action("CargarLocacion", "Home"))
+                @Html.Hidden("HCargarHipodromos", @Url.Action("CargarHipodromos", "Home"))*@
+
+                <div id="ddlHipodromos" class="category2 dropdown-menu btn-block" aria-labelledby="btnHipodromos">
+                </div>
+            </div>
+            <div id="jugadasview">@Html.Partial("_CarrerasView")</div>
+        </div>
+        <div class="box-video">
+            <div class="place-video">
+                <iframe width="100%" height="170px" src="https://www.youtube.com/embed/jIiS2a1OaJw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="bar-button">
+                <i class="fas fa-user"></i>
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-reply"></i>
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+        <div class="box-footer">
+            <div class="dropdown open">
+                <button class="btn btn-secondary btn-block dropdown-toggle" type="button" id="dropdownMenu4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    GLOSARIO
+                </button>
+                <div class="category4 dropdown-menu btn-block" aria-labelledby="dropdownMenu4">
+                    <a class="dropdown-item" href="#grea">Action1</a>
+                    <a class="dropdown-item" href="#great">Action2</a>
+                    <a class="dropdown-item" href="#great">Action3</a>
+                </div>
+            </div>
+        </div>
+    

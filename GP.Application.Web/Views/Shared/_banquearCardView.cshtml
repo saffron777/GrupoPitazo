@@ -1,0 +1,63 @@
+﻿@model CardViewModel
+
+    <div class="one-info accordion one-info" id="accordionActive1">
+        @Html.Hidden("cardId", Model.id)
+        <div class="card">
+            <div class="card-header" id="heading1">
+                <h2 class="mb-0">
+                    <button class="btn btn-link rk-header title" type="button" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                        <div>@Model.HipodromoName | @Model.CarreraNum | @Model.EjemplarName | @Model.TipoJugada</div>
+                        <div>@Model.Monto.ToString("n")</div>
+                        <div>
+                            <i class="btn-icon-collapse fas fa-minus"></i>
+                            <i class="fas fa-times"></i>
+                        </div>
+                    </button>
+                </h2>
+            </div>
+            <div id="collapse1" class="collapse show" aria-labelledby="heading1" data-parent="#accordionActive1">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            @foreach (var item in Model.Aceptaciones)
+                            {
+                                <li class="list-inline-item">PLAY | @item.Usuario | @Model.TipoJugada | @item.Monto.ToString("n")</li>
+                            }
+                            @*<ul class="list-inline">
+                                <li class="list-inline-item">PLAY | @Model.UserId | @Model.TipoJugada | @Model.Monto.ToString("n")</li>
+                            </ul>*@
+                        </div>
+                        <div class="col">
+                            <div class="rk-btn-control">
+                                <i id="btnAceptarBanqueada" class="fas fa-play" data-usuario="@Model.UserId" data-banquedaid="@Model.BanquedaId" onclick="btnAceptarBanqueada_onclick(this,event)"></i>
+                                <a id="btnOferta_@Model.id" href="#contraoferta1_@Model.id"  data-toggle="collapse" role="button" aria-expanded="false" aria-controls="contraoferta1_@Model.id">
+                                    <i class="fas fa-gavel"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="far fa-envelope" data-toggle="modal" data-target="#msg-board"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contraoferta collapse show" id="contraoferta1_@Model.id">
+                        <div class="card card-body">
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" aria-describedby="mount-contraoferta" placeholder="monto">
+                                        <small class="form-text text-muted">Monto de la apuesta</small>
+                                    </div>
+                                    <button type="button" data-banquedaid="@Model.BanquedaId" data-hipId="@Model.HipodromoId" data-ejemplarNum="@Model.EjemplarNum" data-tpj="@Model.TipoJugada" data-carreraId="@Model.CarreraId" class="btn btn-primary btn-block jugar"><i class="fas fa-trophy"></i> <span>APELAR</span></button>
+                                    @*<button type="button" data-hipId="@Model.HipodromoId" data-ejemplarNum="@Model.EjemplarNum" data-tpj="@Model.TipoJugada" data-carreraId ="@Model.CarreraId" class="btn btn-warning btn-block rechazar"><i class="fas fa-times"></i> <span>Rechazar</span></button>*@
+                                </div>
+                                <div class="col">
+                                    <div id="@Model.id" class="card-block box-btn-gamble">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

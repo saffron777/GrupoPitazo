@@ -1,0 +1,129 @@
+﻿@using Microsoft.AspNetCore.Http
+<div class="box-video">
+    <div class="place-video">
+        <iframe width="100%" height="300px" src="https://www.youtube.com/embed/jIiS2a1OaJw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="bar-button">
+        <i class="fas fa-user"></i>
+        <i class="fas fa-heart"></i>
+        <i class="fas fa-reply"></i>
+        <i class="fas fa-bars"></i>
+    </div>
+</div>
+<div class="box-help">
+    <div class="dropdown open">
+        <button class="btn btn-secondary btn-block dropdown-toggle btn-help" type="button" id="dropdownMenu4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            AYUDA
+        </button>
+        <div class="ayuda dropdown-menu btn-block" aria-labelledby="dropdownMenu4">
+            <a class="dropdown-item" href="#grea">Action1</a>
+            <a class="dropdown-item" href="#great">Action2</a>
+            <a class="dropdown-item" href="#great">Action3</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col align-icon-flex-between">
+            <div id="hipodomoPanel" class="dropdown open">
+                <button class="btn btn-secondary btn-block dropdown-toggle" type="button" id="btnHipodromos" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-university"></i>
+                    <span id="hipName">HIPODROMO</span>
+                    @Html.Hidden("HHipodromoId")
+                    @Html.Hidden("HCarreraId")
+                    @Html.Hidden("HCarreraInfo")
+                    <div id="ddlHipodromos" class="category2 dropdown-menu btn-block max-heightVH-dd" aria-labelledby="btnHipodromos">
+                    </div>
+                </button>
+            </div>
+            <div id="carreraspanel" class="dropdown open">
+                <button class="btn btn-secondary btn-block dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-chess-board"></i>
+                    <span id="numCarr">CARRERA</span>
+                </button>
+                <div id="ddlCarreras" class="category3 dropdown-menu btn-block max-heightVH-dd" aria-labelledby="dropdownMenu3">
+                </div>
+            </div>
+            <div id="ejemplarespanel" class="dropdown open">
+                <button class="btn btn-secondary btn-block dropdown-toggle" type="button" id="dropdownMenu5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-horse-head"></i>
+                    <span id="numEjemplar">EJEMPLAR</span>
+                </button>
+                <div class="ejemplar board-horse dropdown-menu btn-block" aria-labelledby="ejemplar">
+                    <ul id="lstEjemplares" class="list-group max-heightVH-dd">
+                        @*<li class="list-group-item">
+                <div class="round-number">1</div>
+                <div class="box-bg">
+                    <div class="name-horse">Distinctly Sweet (FL)</div>
+                </div>
+            </li>*@
+                    </ul>                    
+                </div>
+            </div>
+            <div class="dropdown open">
+                <button class="btn btn-secondary btn-block dropdown-toggle" type="button" id="dropdownMenu6" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-play"></i>
+                    <span>JUGADA</span>
+                </button>
+                <div class="ejemplar board-horse dropdown-menu btn-block" aria-labelledby="ejemplar">
+                    <div class="card box-gamble-row-1">
+                        <div class="card-header text-center">
+                            <span class="number"><i class="fas fa-trophy"></i></span>
+                        </div>
+                        <div id="tpjMenuList" class="card-block box-btn-gamble">
+                            @*<div class="little-box btn btn-dark">1P</div>
+                            <div class="little-box btn btn-dark">1P/2N</div>
+                            <div class="little-box btn btn-dark">2N</div>
+                            <div class="little-box btn btn-dark">2P</div>
+                            <div class="little-box btn btn-dark">2P/3N</div>
+                            <div class="little-box btn btn-dark">3N</div>
+                            <div class="little-box btn btn-dark">3P</div>
+                            <div class="little-box btn btn-dark">3P/4N</div>
+                            <div class="little-box btn btn-dark">4N</div>
+                            <div class="little-box btn btn-dark">4P</div>
+                            <div class="little-box btn btn-dark">4P/5N</div>
+                            <div class="little-box btn btn-dark">5N</div>
+                            <div class="little-box btn btn-dark">5P</div>
+                            <div class="little-box btn btn-dark">10/9</div>
+                            <div class="little-box btn btn-dark">10/8</div>
+                            <div class="little-box btn btn-dark">10/7</div>
+                            <div class="little-box btn btn-dark">10/6</div>
+                            <div class="little-box btn btn-dark">10/5</div>
+                            <div class="little-box btn btn-dark">10/4</div>
+                            <div class="little-box btn btn-dark">10/3</div>
+                            <div class="little-box btn btn-dark">10/2</div>*@
+                        </div>
+                        <div class="card-footer">
+                            <div class="d-flex justify-content-center mb-2">
+                                <button class="btn btn-warning btn-delete"><i class="fas fa-play"></i> Anular</button>
+                                <button id="btnMenuJugar" data-url="@Url.Action("Jugar","Home")" class="btn btn-primary btn-play"><i class="fas fa-play"></i> Jugar</button>
+                                <button type="button" class="btn btn-warning btn-block"><i class="fas fa-university"></i> BANQUEAR</button>
+                            </div>
+                            <input id="TMontoApuesta" class="form-control form-control" type="text" placeholder="Monto Apostar" onkeypress="return isNumberKey(this, event);">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+            @*<button id="btnMenuBanquear" type="button" data-url="@Url.Action("Banquear","Home")" class="d-none rkbflex btn btn-primary btn-block"><i class="fas fa-university"></i> BANQUEAR</button>*@
+            @*<button id="btnMenuEditEventos" type="button" class="rkbflex btn-event btn btn-secondary btn-block rk-me" data-toggle="modal" data-target="#event-board"><i class="fas fa-edit"></i> MODIFICAR EVENTOS</button>*@
+            <button id="btnMenuReporte" data-url="@Url.Action("Reporte","Home")" type="button" class="rkbflex btn-event btn-secondary btn-block" data-toggle="modal" data-target="#report-board"><i class="far fa-check-square"></i> REPORTE</button>
+            <button id="btnMenuMsj" type="button" data-url="@Url.Action("MensajeResumen","Home")" class="rkbflex btn-event btn-secondary btn-block" data-toggle="modal" data-target="#msg-board"><i class="far fa-envelope" data-toggle="modal" data-target="#msg-board"></i> MENSAJES</button>
+        </div>
+        <div class="col">
+            <div class="box-balance">
+                <span class="balance-text">SALDO:</span>
+                <span class="value-balance">@Decimal.Parse(Context.Session.GetString("saldo")).ToString("n")@Context.Session.GetString("currency")</span>
+            </div>
+            <div class="box-ticket text-center">
+                <label for="TicketText">Tickets</label>
+                <ul id="ticketsList" class="area-ticket style-list-ticket">
+                    @*<li><label for="TicketText">Tickets #1</label></li>
+                    <li><label for="TicketText">Tickets #2</label></li>
+                    <li><label for="TicketText">Tickets #3</label></li>
+                    <li><label for="TicketText">Tickets #4</label></li>
+                    <li><label for="TicketText">Tickets #5</label></li>*@
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

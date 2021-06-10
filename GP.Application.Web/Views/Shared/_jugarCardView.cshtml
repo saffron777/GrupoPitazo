@@ -1,0 +1,71 @@
+﻿@using Microsoft.AspNetCore.Http
+@model CardViewModel
+
+    <div class="one-info accordion one-info" id="TPJUG_@Model.id.Trim()">
+        @Html.Hidden("cardId", Model.id.Trim())
+        @Html.Hidden("HSaldo", (object)ViewBag.saldo)
+        @Html.Hidden("HinfoCarreraFecha", Model.FechaCarreraInfo.Trim())
+        <div class="card">
+            <div class="card-header" id="heading_@Model.id.Trim()">
+                <h2 class="mb-0">
+                    <button id="btnHeaderCard_@Model.id.Trim()" data-id="collapse_@Model.id.Trim()" class="btn btn-link rk-header title jugar" type="button" data-toggle="collapse" data-target="#collapse_@Model.id.Trim()" aria-expanded="true" aria-controls="collapse_@Model.id" >
+                        <div>@Model.HipodromoName | @Model.CarreraNum | @Model.EjemplarName | @Model.TipoJugada | @Model.UserId</div>
+                        <div>@Model.AceptacionesMonto.ToString("n")@Context.Session.GetString("currency")/@Model.Monto.ToString("n")@Context.Session.GetString("currency")</div>
+                        <div>
+                            <i class="btn-icon-collapse fas fa-minus"></i>
+                            <i class="fas fa-times"></i>
+                        </div>
+                    </button>
+                </h2>
+            </div>
+            <div id="collapse_@Model.id.Trim()" class="collapse show" aria-labelledby="heading_@Model.id.Trim()" data-parent="#TPJUG_@Model.id.Trim()">
+                <div class="card-body">
+                    <div class="row">
+                        <div id="tblaceptaciones_@Model.id.Trim()" class="col">
+                            @if (Model.Aceptaciones != null)
+                            {
+                                <ul class="list-inline">
+                                    @foreach (var item in Model.Aceptaciones)
+                                    {
+                                    <li class="list-inline-item">PLAY | @item.Usuario | @Model.TipoJugada | @item.Monto.ToString("n")@Context.Session.GetString("currency")</li>
+                                    }
+                                </ul>
+                            }
+
+                            @*<ul class="list-inline">
+                                <li class="list-inline-item">PLAY | @Model.UserId | @Model.TipoJugada | @Model.Monto.ToString("n")</li>
+                            </ul>*@
+                        </div>
+                        <div class="col">
+                            <div class="rk-btn-control">
+                                <i id="btnAceptarApuesta_@Model.id.Trim()" class="fas fa-play" href="#contraoferta2_@Model.id" data-collapse="contraoferta2_@Model.id.Trim()" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="contraoferta2_@Model.id.Trim()" data-usuario="@Model.UserId" data-jugadaid="@Model.JugadaId" onclick="btnCardJugarCollapse_onclick(this,event)"></i>
+                                @*<a id="btnOferta_@Model.id" href="#contraoferta2_@Model.id"  data-toggle="collapse" role="button" aria-expanded="false" aria-controls="contraoferta2_@Model.id" onclick="btnOferta_onclick(this,event)">
+                                    <i class="fas fa-gavel"></i>
+                                </a>*@
+                                <i class="far fa-envelope" data-toggle="modal" data-target="#msg-board"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contraoferta collapse show" id="contraoferta2_@Model.id.Trim()">
+                        <div class="card card-body">
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <input id="btnMontoApuesta_@Model.id.Trim()" type="text" class="form-control" aria-describedby="mount-contraoferta" placeholder="monto" onkeypress="return isNumberKey(this, event);">
+                                        <small class="form-text text-muted">Monto de la apuesta</small>
+                                    </div>
+                                    <button type="button"   data-carreraNum="@Model.CarreraNum" data-montoJugada="@Model.Monto" data-cardid="@Model.id.Trim()" data-id="btnMontoApuesta_@Model.id.Trim()" data-usuario="@Model.UserId" data-usuarioApuesta="@Model.UsuarioApuesta" data-hipname="@Model.HipodromoName" data-jugadaid="@Model.JugadaId" data-hipId="@Model.HipodromoId" data-ejemplarNum="@Model.EjemplarNum" data-tpj="@Model.TipoJugada" data-carreraId="@Model.CarreraId" class="btn btn-primary btn-block jugar" onclick="btnAceptarApuesta_onclick(this,event)"><i class="fas fa-trophy"></i> <span>JUGAR</span></button>
+                                    @*<button type="button" data-hipId="@Model.HipodromoId" data-ejemplarNum="@Model.EjemplarNum" data-tpj="@Model.TipoJugada" data-carreraId ="@Model.CarreraId" class="btn btn-warning btn-block rechazar"><i class="fas fa-times"></i> <span>Rechazar</span></button>*@
+                                </div>
+                                <div class="col">
+                                    <div id="TPJUG_@Model.id.Trim()" class="card-block box-btn-gamble">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

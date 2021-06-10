@@ -1,0 +1,33 @@
+﻿@using Microsoft.AspNetCore.Http
+<div class="row">
+    <div class="col-5 rk-p-0">
+        <div class="card box-gamble-row-1">
+            <div class="card-header text-center">
+                <span class="number"><i class="fas fa-trophy"></i></span>
+            </div>
+            <div id="tpjMenuList" class="card-block box-btn-gamble">                
+            </div>
+        </div>
+    </div>
+    <div class="col-7">
+        <div class="box-amount">
+            <div class="box-balance">
+                <span class="balance-text">SALDO:</span>
+                <span class="value-balance">@Decimal.Parse(Context.Session.GetString("saldo")).ToString("n")@Context.Session.GetString("currency")</span>
+            </div>
+            <div class="box-input-value">
+                <input id="TMontoApuesta" type="text" class="form-control" placeholder="Monto Apostar" onkeypress="return isNumberKey(this, event);"/>
+            </div>
+            <div class="box-text-betamount">
+                MONTO DE LA APUESTA
+            </div>
+            <button id="btnMenuJugar" type="button" data-url="@Url.Action("Jugar","Home")" class="btn btn-primary btn-block"><i class="fas fa-play"></i> JUGAR</button>
+            @*<button id="btnMenuBanquear" type="button" data-url="@Url.Action("Banquear","Home")" class="btn btn-warning btn-block"><i class="fas fa-university"></i> BANQUEAR</button>*@
+            @*<button id="btnMenuEditEventos" type="button" class="btn btn-secondary btn-block rk-me" data-toggle="modal" data-target="#event-board"><i class="fas fa-edit"></i> MODIFICAR EVENTOS</button>*@
+            <button id="btnMenuReporte" data-url="@Url.Action("Reporte","Home")" type="button" class="btn btn-secondary btn-block" data-toggle="modal" data-target="#report-board"><i class="far fa-check-square"></i> REPORTE</button>
+            <button id="btnMenuMsj" type="button" data-url="@Url.Action("MensajeResumen","Home")" class="btn btn-secondary btn-block" data-toggle="modal" data-target="#msg-board"><i class="far fa-envelope" data-toggle="modal" data-target="#msg-board"></i> MENSAJES</button>
+        </div>
+    </div>
+</div>
+
+

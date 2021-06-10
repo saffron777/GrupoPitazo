@@ -1,0 +1,49 @@
+﻿@*@using GP.Core.Models.ViewModels*@
+@*@model List<HipodromosViewModels>*@
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+<div class="form-group row">
+    <div class="col-md-2">
+        <div class="input-group mb-2">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="dpFecha">Fecha</label>
+            </div>
+            <input type="date" name="dpFecha" id="dpFecha" class = "form-control" data-url="@Url.Action("GetHipodromosPorFecha", "Hipodromo" )" value="@DateTime.Now.Date.ToString("yyyy-MM-dd")" onchange="dpFecha_onchange(this,event)" />
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="ddlHipodromo">Hipodromo</label>
+            </div>
+            <select class="custom-select" id="ddlHipodromo" data-url="@Url.Action("GetCarreras", "Hipodromo" )" onchange="ddlHipodromo_onchange(this, event)">
+                @*<option value=""></option>
+                @foreach (var item in Model)
+                {
+                    <option value="@item.HipodromoID">@item.Nombre</option>
+                }*@
+            </select>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="ddlCarrera">Carrera</label>
+            </div>
+            <select class="custom-select" id="ddlCarrera">
+            </select>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="form-group">
+            <button class="btn btn-primary" type="button" data-url="@Url.Action("BuscarInfoCarrerasPartialView", "Hipodromo" )" data-ajaxHandler="@Url.Action("AjaxHandler","Hipodromo")" id="btnBuscar">
+                Buscar
+            </button>
+        </div>
+    </div>
+</div>
+
+
+

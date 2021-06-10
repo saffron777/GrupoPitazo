@@ -1,0 +1,554 @@
+div.card-block>ul {
+    max-height: 305px;
+    overflow: auto;
+    height: 252px;
+}
+
+.card.board-gamble {
+    background-color: #c4bbbb;
+    padding: 10px;
+    border: 1px solid white;
+}
+
+.card.board-gamble .card-block {
+    /* overflow: auto; */
+    /* max-height: 300px; */
+    /* min-height: 300px; */
+}
+
+.box-text-betamount {
+    font-size: 10px;
+    text-align: center;
+}
+
+.card.board-horse .card-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card.board-horse .card-header .title {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.card.board-horse .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 9px;
+}
+
+.card.board-horse .list-group-item .round-number {
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    padding: 2px 10px;
+}
+
+.box-head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.box-head.button-head div.dropdown {
+    flex-basis: 100%;
+}
+
+div.dropdown button {
+    border-radius: 0;
+    border: 1px solid gray;
+}
+
+.box-video {
+    height: 237px;
+    background-color: black;
+    border: solid 13px #9E9E9E;
+}
+
+.box-footer select.c-select {
+    text-align: center;
+}
+
+.bar-button {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+}
+
+.bar-button .fas {
+    margin-left: 10px;
+}
+
+.bar-button .fas.fa-user {
+    display: flex;
+    flex-grow: 1;
+}
+
+.fas.fa-chess-knight,
+.fas.fa-gavel {
+    -moz-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    -ms-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+}
+
+.icon-horse {
+    margin-left: 10px
+}
+
+section ul.list-inline {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+section ul.list-inline .list-inline-item input {
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+section ul.list-inline .list-inline-item span {
+    margin: 0 10px;
+}
+
+.rk-me {
+    font-size: 14px;
+
+}
+
+.card-block.box-btn-gamble {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: stretch;
+    height: 265px;
+    max-height: 281px;
+    /* max-height: 266px; */
+    justify-content: center;
+    overflow: auto;
+}
+
+.little-box {
+    width: 24%;
+    height: 34px;
+    background: gray;
+    margin: 6px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.navbar-dark .navbar-brand {
+    font-size: 0;
+}
+
+@media (max-width: 900px) {
+    .card-block.box-btn-gamble {
+        overflow: auto
+    }
+
+    .little-box {
+        width: 25%;
+        height: 41px;
+
+    }
+    .box-head.button-head .btn{
+          padding: 6px;
+    }
+}
+
+@media (min-width: 900px) {
+    section {
+        background-color: #7d7d7fa1;
+        border: 13px solid #8e8d92;
+        padding: 25px;
+    }
+
+    .box-amount .btn {
+        display: flex;
+        justify-content: initial;
+        align-items: center;
+        flex-basis: 100%;
+    }
+
+    .box-amount .btn .fas,
+    .box-amount .btn .far {
+        margin-right: 40px;
+    }
+
+    .navbar-dark .navbar-brand {
+        font-size: 0;
+        width: 159px;
+        height: 40px;
+        background-repeat: no-repeat;
+        background-position: 100%;
+        background-size: 104%;
+        padding: 0;
+    }
+
+    .box-head.button-head .btn-secondary {
+        color: #9f9ea2;
+        background-color: #5f5f5f;
+        border-color: #5f5f5f;
+        display: flex;
+        justify-content: space-around;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1350px;
+    }
+}
+
+.form-control {
+    font-size: 15px
+}
+
+.box-amount .btn {
+    text-align: left;
+}
+
+
+.box-container-radio {
+    color: white;
+    display: flex;
+    position: relative;
+    padding-left: 27px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    /* font-size: 22px; */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    flex-direction: row-reverse;
+    margin-right: 13px;
+}
+
+/* Hide the browser's default radio button */
+.box-container-radio input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    background-color: #eee;
+    border-radius: 50%;
+    /* z-index: 9999999999999999; */
+}
+
+/* On mouse-over, add a grey background color */
+.box-container-radio:hover input~.checkmark {
+    background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.box-container-radio input:checked~.checkmark {
+    background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.box-container-radio input:checked~.checkmark:after {
+    display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.box-container-radio .checkmark:after {
+    top: 4px;
+    left: 4px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: white;
+    z-index: 1;
+}
+
+.rk-box-radio {
+    display: flex;
+}
+
+.bar-text {
+    margin: 0 14px;
+}
+
+.card.board-gamble .card-header.title,
+.accordion .rk-header.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    background-color: #534b4b;
+    padding: .5rem;
+    width: 100%;
+}
+
+.card.board-gamble .card-block {
+    padding: 0 .5rem;
+    background-color: #837777;
+}
+
+.card.board-gamble .card-block .t-gamble {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    right: 0;
+    color: white
+}
+
+.card.board-gamble .card.box-1 .card-block .list-inline:first-child {
+    border-bottom: 1px solid white;
+    padding-bottom: 10px;
+}
+
+.card.board-gamble .card-block .list-inline-item {
+    width: 100%;
+    text-align: center;
+    word-spacing: 5px;
+}
+
+.card.board-gamble .card-header.title div:first-child,
+.accordion .rk-header.title {
+    word-spacing: 5px;
+}
+
+.card.board-gamble .card {
+    margin-bottom: 10px;
+}
+
+
+.card.board-gamble .accordion {
+    /* background-color: red; */
+}
+
+.card.board-gamble .accordion .card-header {
+    /* background-color: #ac9f9f; */
+}
+
+.card.board-gamble .accordion .card-body {
+    background-color: #727176;
+    padding: 0 0px;
+}
+
+.card.board-gamble .accordion .card-body .t-gamble {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    right: 0;
+    color: white;
+    font-size: 32px;
+}
+
+.card.board-gamble .accordion.two-info .card-body .list-inline:first-child {
+    border-bottom: 1px solid white;
+    padding-bottom: 10px;
+}
+
+.card.board-gamble .card-body .list-inline-item {
+    width: 100%;
+    text-align: center;
+    word-spacing: 5px;
+}
+
+.card.board-gamble .card-header .btn.btn-link.rk-header.title {
+    color: yellow;
+}
+
+.card.board-gamble .rk-btn-control {
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #5f5f5f;
+    font-size: 24px;
+}
+.card.board-gamble .rk-btn-control a{
+    text-decoration:none;
+    color:unset;
+}
+
+.card.board-gamble .rk-btn-control .fas,
+.card.board-gamble .rk-btn-control .far {
+    /* margin:0 10px; */
+    flex-basis: auto;
+}
+
+.card.board-gamble .rk-btn-control .fas:hover,
+.card.board-gamble .rk-btn-control .far:hover {
+    color: #3e3e3e;
+    cursor: pointer;
+}
+
+
+.rk-hide-custom,
+.rk-hide-html-bootstrap {
+    display: none;
+}
+
+.rk-hide-html-bootstrap {
+    display: block;
+}
+
+.col-5.rk-p-0 {
+    padding: 0;
+}
+/*.card.board-gamble .one-info.accordion.one-info .card-header .btn.btn-link.rk-header.title{
+    background-color: blue;
+}*/
+.card.board-gamble .one-info.accordion.one-info:nth-child(odd) .card-header .btn.btn-link.rk-header.title{
+    background-color: #240385;
+}
+.card.board-gamble .one-info.accordion.one-info:nth-child(even) .card-header .btn.btn-link.rk-header.title{
+    background-color: yellow;
+    color: #240385;
+}
+.card.board-gamble .one-info.accordion.one-info .card-body {
+    background-color: #9b9a9b;
+}
+.card.board-gamble .one-info.accordion.one-info.disabled .card-header .btn.btn-link.rk-header.title{
+    background-color: #5b5a5e;
+    color: white;
+}
+.card.board-gamble .one-info.accordion.one-info.disabled .card-body {
+    background-color: #727176;
+}
+.card.board-gamble .one-info.accordion.one-info.disabled .card-body .rk-btn-control{
+    display:none;
+
+}
+.card.board-gamble .double-info.accordion.two-info:nth-child(odd) .card-header .btn.btn-link.rk-header.title {
+    background-color: yellow;
+    color: #240385;
+}
+.card.board-gamble .double-info.accordion.two-info:nth-child(even) .card-header .btn.btn-link.rk-header.title {
+    background-color: #240385;
+    color: yellow;
+}
+.card.board-gamble .double-info.accordion.two-info .card-body {
+    background-color: #9b9a9b;
+    padding: 0 10px;
+}
+.card.board-gamble .double-info.accordion.two-info.disabled .card-header .btn.btn-link.rk-header.title {
+    background-color: #5b5a5e;
+    color: white;
+}
+.card.board-gamble .double-info.accordion.two-info.disabled .card-body {
+    background-color: #727176;
+    padding: 0 10px;
+}
+#table-info .btn-link:hover,#table-info .btn-link.focus,#table-info .btn-link:focus{
+    text-decoration: none;
+}
+
+.card.board-horse .list-group-item .round-number {
+    background-color: gray;
+    padding: 12px 0px;
+    width: 49px;
+    height: 49px;
+    margin-right: 10px;
+    text-align: center;
+}
+.card.board-horse .list-group-item:nth-child(1) .round-number{background-color:red;color:white;}
+.card.board-horse .list-group-item:nth-child(2) .round-number{background-color:white !important;color:black !important; border:1px solid black; }
+.card.board-horse .list-group-item:nth-child(3) .round-number{background-color:blue;color:white;}
+.card.board-horse .list-group-item:nth-child(4) .round-number{background-color: #fcfb02;color: black;}
+.card.board-horse .list-group-item:nth-child(5) .round-number{background-color: #1b4c23;color:white;}
+.card.board-horse .list-group-item:nth-child(6) .round-number{background-color: #020101;color: #fbf40c;}
+.card.board-horse .list-group-item:nth-child(7) .round-number{background-color: #fb4b08;color: black;}
+.card.board-horse .list-group-item:nth-child(8) .round-number{background-color: #f64d81;color: black;}
+.card.board-horse .list-group-item:nth-child(9) .round-number{background-color: #00a6c8;color: black;}
+.card.board-horse .list-group-item:nth-child(10) .round-number{background-color: #753e99;color:white;}
+.card.board-horse .list-group-item:nth-child(11) .round-number{background-color: #b5abb0;color: #dc0909;}
+.card.board-horse .list-group-item:nth-child(12) .round-number{background-color: #05fd06;color: black;}
+.card.board-horse .list-group-item:nth-child(13) .round-number{background-color: #3e0b12;color:white;}
+.card.board-horse .list-group-item:nth-child(14) .round-number{background-color: #6a0521;color: #f6fa07;}
+.card.board-horse .list-group-item:nth-child(15) .round-number{background-color: #979587;color: black;}
+.card.board-horse .list-group-item:nth-child(16) .round-number{background-color: #96dfed;color: #e30806;}
+.card.board-horse .list-group-item:nth-child(17) .round-number{background-color: #06063b;color:white;}
+.card.board-horse .list-group-item:nth-child(18) .round-number{background-color: #061d1b;color: #f4f917;}
+.card.board-horse .list-group-item:nth-child(19) .round-number{background-color: #171b84;color: #fc0005;}
+.card.board-horse .list-group-item:nth-child(20) .round-number{background-color: #f61967;color: #faf420;}
+.card.board-horse .list-group-item:nth-child(21) .round-number{background-color: #968ebc;color: #0c0c3b;}
+
+.contraoferta > .card.card-body{background-color: #c4bbbb!important;}
+.contraoferta > .card.card-body button{
+    display:flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.contraoferta .form-group input, .contraoferta .form-group small {text-align: center}
+.contraoferta .card.card-body{padding: 14px!important;}
+
+.contraoferta .card.card-body .card-block.box-btn-gamble{
+    display: flex;
+    flex-direction: column;
+    height: 168px;
+    padding: 0 5px;
+}
+
+.contraoferta .card.card-body .card-block.box-btn-gamble .little-box {
+    width: 44px;
+    height: 43px;
+    background: black;
+    margin: 4px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.card .card-block .little-box,.contraoferta .card.card-body .card-block.box-btn-gamble .little-box{
+    background-color: #5f5f5f;
+    border: none;
+    color: #f0cb5b;
+}
+.card.board-gamble .card-block {
+    background-color: transparent;
+}
+
+
+@media (min-width: 576px)
+{
+    .modal-dialog {
+        max-width: 66%;
+        margin: 1.75rem auto;
+    }
+}
+
+
+.modal .table{
+    text-align: center;
+} 

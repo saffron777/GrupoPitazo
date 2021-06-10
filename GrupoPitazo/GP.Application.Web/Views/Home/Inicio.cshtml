@@ -1,0 +1,44 @@
+﻿
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@{ 
+    Layout = null;
+}
+
+<html>
+<head>
+    <title>Grupo Pitazo - Inicio de Sesion</title>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="keywords" content="Latest Login Form Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="main-bg">
+        <!-- Default form register -->
+        <form class="text-center border border-light p-5" method="post" asp-action="Inicio" asp-controller="Home">
+
+            <p class="h4 mb-4">Inicio</p>
+
+            <div class="form-row mb-4">
+
+                <input type="text" id="id" name="id" class="form-control" placeholder="Usuario">
+                <input type="password" id="password" name="password" class="form-control" placeholder="Password">
+                @*<input type="text" id="idagente" name="idagente" class="form-control" placeholder="Id Agente">
+                <input type="text" id="agente" name="agente" class="form-control" placeholder="Agente">
+                <input type="text" id="currency" name="currency" class="form-control" placeholder="Moneda">
+                <input type="text" id="saldo" name="saldo" class="form-control" placeholder="Saldo">
+                <input type="text" id="comision" name="comision" class="form-control" placeholder="% Comision">*@
+                <!-- Sign up button -->
+                <button class="btn btn-info my-4 btn-block" type="submit">Enviar</button>
+            </div>
+
+        </form>
+    </div>
+</body>
+</html>
+<script src="~/js/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>

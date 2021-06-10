@@ -1,0 +1,110 @@
+﻿
+@{
+    ViewData["Title"] = "Login";
+    Layout = null;
+}
+
+@*<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <h2><strong>Login Page </strong></h2><br />
+            <form asp-action="login" method="post">
+                <div class="form-group">
+                    <label>User Name</label>
+                    <input type="text" class="form-control" id="userName" name="userName" placeholder="Enter user name">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+                </div>
+                <div class="form-check">
+                    <button class="btn btn-info" type="reset">Reset</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>*@
+<!DOCTYPE HTML>
+<html lang="zxx">
+<head>
+    <title>Grupo Pitazo - Inicio de Sesion</title>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="keywords" content="Latest Login Form Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements" />
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <!-- Meta tag Keywords -->
+    <!-- css files -->    
+    <link href="~/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- Style-CSS -->    
+    <link href="~/css/font-awesome.min.css" rel="stylesheet" />
+    <!-- Font-Awesome-Icons-CSS -->
+    <!-- //css files -->
+    <!-- web-fonts -->
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese"
+          rel="stylesheet">
+    <!-- //web-fonts -->
+</head>
+
+<body>
+    <div class="main-bg">
+        <!-- title -->
+        @*<h1>Inicio de sesion</h1>*@
+        <!-- //title -->
+        <!-- content -->
+        <div class="sub-main-w3">
+            <div class="bg-content-w3pvt">
+                <div class="top-content-style">
+                    @*<img src="~/images/user.jpg" alt="" />*@
+                    <i class="fa fa-user-circle fa-lg"></i>
+                </div>
+                <form asp-action="login" method="post">
+                    <p class="legend">Ingrese aqui<span class="fa fa-hand-o-down"></span></p>
+                    <div class="input">
+                        <input type="text" class="form-control" id="userName" name="userName" placeholder="Ingrese nombre de usuario" required>
+                        <span class="fa fa-user"></span>
+                    </div>
+                    <div class="input">
+                        <input type="Password" placeholder="Password" name="Password" required />
+                        <span class="fa fa-unlock"></span>
+                    </div>
+                    <div class="form-check">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <button class="btn submit" type="reset">
+                                    <span class="fa fa-undo"></span>
+                                </button>
+                            </div>
+                            <div class="col-md-6">
+                                <button type="submit" class="btn submit">
+                                    <span class="fa fa-sign-in"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </form>
+                <a href="#" class="bottom-text-w3ls">Olvido su clave?</a>
+            </div>
+        </div>
+        <!-- //content -->
+        <!-- copyright -->
+        <div class="copyright">
+            <h2>
+                &copy; 2019 Grupo Pitazo                
+            </h2>
+        </div>
+        <!-- //copyright -->
+    </div>
+</body>
+</html>

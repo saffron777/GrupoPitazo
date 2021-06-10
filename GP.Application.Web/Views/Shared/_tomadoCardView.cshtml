@@ -1,0 +1,41 @@
+﻿@using Microsoft.AspNetCore.Http
+@model CardViewModel
+
+<div class="double-info accordion two-info disabled" id="TPJUG_@Model.id.Trim()">
+    @Html.Hidden("cardId", Model.id.Trim())
+    @Html.Hidden("HSaldo", (object)ViewBag.saldo)
+    <div class="card">
+        <div class="card-header" id="heading_@Model.id.Trim()">
+            <h2 class="mb-0">
+                <button class="btn btn-link rk-header title" type="button" data-toggle="collapse" data-target="#collapse_@Model.id.Trim()" aria-expanded="true" aria-controls="collapse_@Model.id.Trim()">
+                    <div>@Model.HipodromoName | @Model.CarreraNum | @Model.EjemplarName | @Model.TipoJugada | @Model.UserId</div>
+                    <div>@Model.AceptacionesMonto.ToString("n")@Context.Session.GetString("currency")/@Model.Monto.ToString("n")@Context.Session.GetString("currency")</div>
+                    <div>
+                        <i class="btn-icon-collapse fas fa-minus"></i>
+                        <i class="fas fa-times"></i>
+                    </div>
+                </button>
+            </h2>
+        </div>
+        <div id="collapse_@Model.id.Trim()" class="collapse show" aria-labelledby="heading_@Model.id.Trim()" data-parent="#TPJUG_@Model.id.Trim()">
+            <div class="card-body">
+                <div class="row">
+                    <div id="tblaceptaciones_@Model.id.Trim()" class="col">
+                        @if (Model.Aceptaciones != null)
+                        {
+                            <ul class="list-inline">
+                                @foreach (var item in Model.Aceptaciones)
+                                {
+                                <li class="list-inline-item">PLAY | @item.Usuario | @Model.TipoJugada | @item.Monto.ToString("n")@Context.Session.GetString("currency")</li>
+                                }
+                            </ul>
+                        }
+                    </div>
+                    <div class="col">
+                        <div class="t-gamble">JUGANDO</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

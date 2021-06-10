@@ -1,0 +1,170 @@
+﻿@using GP.Core.Models.ViewModels
+@model DatosHipodromoViewModel
+@{
+
+    List<SelectListItem> locationList = new List<SelectListItem>();
+
+
+    locationList.Add(new SelectListItem { Value = "Americana", Text = "Americana" });
+    locationList.Add(new SelectListItem { Value = "Nacionales", Text = "Nacionales" });
+
+    List<SelectListItem> ClasificacionList = new List<SelectListItem>();
+
+
+    ClasificacionList.Add(new SelectListItem { Value = "A", Text = "A" });
+    ClasificacionList.Add(new SelectListItem { Value = "B", Text = "B" });
+    ClasificacionList.Add(new SelectListItem { Value = "C", Text = "C" });
+
+    var horacarrera = Model.HoraCarrera.ToString("hh\\:mm");
+
+    var i = 0;
+
+}
+
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<div class="form-group row">
+    <input type="hidden" id="HfechaCierreCarrera" value="@Model.FechaCierreCarrera" />
+    <input type="hidden" id="HhoraCierreCarrera" value="@Model.HoraCierreCarrera" />
+
+    <div class="col-sm-3">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="ddlLocacion">Locacion</label>
+            </div>
+            
+            @Html.DropDownListFor(model => model.Locacion, (IEnumerable<SelectListItem>)locationList, "", htmlAttributes: new { @class = "custom-select", @id = "ddlLocacion", @name = "ddlLocacion", data_selectdValue = @Model.Locacion, onchange = "ddlLocacion_onchange(this, event)" })
+                        
+        </div>
+        <span id="validator_ddlLocacion" asp-validation-for="Locacion"></span>
+    </div>
+   
+<div class="col-sm-3">
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <label class="input-group-text" for="dpFechaCarrera">Fecha Carrera</label>
+        </div>       
+        @Html.EditorFor(model => model.FechaCarrera, new { htmlAttributes = new { @id = "dpFechaCarrera", @name = "dpFechaCarrera", type = "date", @Value = @Model.FechaCarrera, @class = "form-control" , min = DateTime.Now.ToString("yyyy-MM-dd"), onchange = "dpFechaCarrera_onchange(this, event)"} })
+        <div class="input-group-addon">
+            <span class="glyphicon glyphicon-th"></span>
+        </div>
+    </div>
+    <span id="validator_dpFechaCarrera" asp-validation-for="FechaCarrera"></span>
+</div>
+
+
+</div>
+<div class="form-group row">
+
+    <div class="col-sm-3">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="ddlClasificacion">Clasificacion</label>
+            </div>           
+            @Html.DropDownListFor(model => model.Clasificacion, (IEnumerable<SelectListItem>)ClasificacionList, "", htmlAttributes: new { @class = "custom-select", @id = "ddlClasificacion", @name = "ddlClasificacion", data_selectdValue = @Model.Clasificacion, onchange = "ddlClasificacion_onchange(this, event)" })
+        </div>
+        <span id="validator_ddlClasificacion" asp-validation-for="Clasificacion"></span>
+    </div>
+
+    <div id="dataHip" class="col-sm-3">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="ddlDataHipodromo">Hipodromo</label>
+            </div>
+            
+            @Html.DropDownListFor(model => model.HipodromoID, (IEnumerable<SelectListItem>)locationList, "", htmlAttributes: new { @class = "custom-select", @id = "ddlDataHipodromo", @name = "ddlDataHipodromo", data_selectdValue = @Model.HipodromoID, onchange = "ddlDataHipodromo_onchange(this, event)" })
+        </div>
+        <span id="validator_ddlDataHipodromo" asp-validation-for="HipodromoID"></span>
+    </div>
+</div>
+
+<div class="form-group row">
+    
+    <div class="col-sm-3">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="dpHoraCarrera">Hora Carrera</label>
+            </div>            
+            @Html.EditorFor(model => model.HoraCarrera, new { htmlAttributes = new { @id = "dpHoraCarrera", @name = "dpHoraCarrera", type = "text", @Value = @horacarrera, @class = "form-control timepicker"} })
+            <div class="input-group-addon">
+                <span class="glyphicon glyphicon-th"></span>
+            </div>
+        </div>
+        <span id="validator_dpHoraCarrera" asp-validation-for="HoraCarrera"></span>
+    </div>
+    
+<div class="col-sm-3">
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <label class="input-group-text" for="txtNumCarrera">Carrera Numero</label>
+        </div>       
+        @Html.EditorFor(model => model.NumeroCarrera, new { htmlAttributes = new { @id = "txtNumCarrera", @name = "txtNumCarrera", type = "number", @Value = @Model.NumeroCarrera, @class = "form-control", min="1", max="15" } })
+        
+    </div>
+    <span id="validator_txtNumCarrera" asp-validation-for="NumeroCarrera"></span>
+</div>
+</div>
+<div class="form-group row">
+    
+    <div class="col-sm-3">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="txtCantEjemplares">Cantidad de Ejemplares</label>
+            </div>
+            
+            @*<input type="number" class="form-control" value="@Model.CantidadEjemplar" id="txtCantEjemplares" readonly>*@
+            <label class="form-control" id="txtCantEjemplares" name="txtCantEjemplares">@Model.CantidadEjemplar</label>            
+            @*@Html.Label("", @Model.CantidadEjemplar.ToString(),new { htmlAttributes = new { @id = "txtCantEjemplares", @name = "txtCantEjemplares", @class = "form-control"} } )*@
+        </div>
+        <span id="validator_txtCantEjemplares" asp-validation-for="CantidadEjemplar"></span>
+    </div>
+</div>
+
+@if (Model.TipoForm != "RESULTADO" && (Model.FechaCierreCarrera == null && Model.HoraCierreCarrera == null))
+{
+    <div class="form-group row">
+        <div class="col-sm-2">
+            <div class="form-group">
+                <button class="btn btn-primary" type="button" id="addRow" onclick="addRow_onclick(this, event)">
+                    Agregar Ejemplar
+                </button>
+            </div>
+        </div>
+    </div>
+}
+
+<div class="form-group row">
+    <div class="col-sm-4">
+        <table id="tblEjemplares" class="table table-striped nowrap" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Nro</th>
+                    <th>Nombre Ejemplar</th>
+                    @if (Model.TipoForm == "MODIFICAR")
+                    {
+                        <th>Estatus Ejemplar</th>
+                    }
+                    else if (Model.TipoForm == "RESULTADO")
+                    {
+                        <th>Estatus Ejemplar</th>
+                        <th>Resultados</th>
+                    }
+                    <th>Accion</th>
+                </tr>
+            </thead>
+            <tbody>               
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="form-group row">
+    <div class="col-sm-6">
+        <div class="form-group">
+            <button class="btn btn-primary" type="button" id="btnGuardar" data-ajaxHandler="@Url.Action("AjaxHandler","Hipodromo")">
+                Guardar
+            </button>
+        </div>
+    </div>
+</div>
+
+
+

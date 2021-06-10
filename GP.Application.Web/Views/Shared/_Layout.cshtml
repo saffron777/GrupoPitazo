@@ -1,0 +1,247 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>GP-Oficina</title>
+    <!-- Bootstrap core CSS -->
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link href="~/css/style.css" rel="stylesheet" />
+    <!-- <link rel="stylesheet" href="css/empresas/"> -->    
+    <link href="~/css/gp25.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link href="~/css/sweetalert2.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div>@Html.Partial("_LinksActionsView")</div>    
+    <div id="modalMsj"></div>
+    <div class="modal fade" id="msg-board2" tabindex="-1" role="dialog" aria-labelledby="msg-board2" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="box-content-modal">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th class="aviso">TICKET</th>
+                                    <th class="fecha">TIPO</th>
+                                    <th class="control">DETALLE</th>
+                                    <th class="control">MONTO</th>
+                                    <th class="control">MENSAJE</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>88775</td>
+                                    <td>Banquea</td>
+                                    <td>HIP/CAR/CAB/JUG</td>
+                                    <td>1.000,00</td>
+                                    <td><a href="#read-info-table-01" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="read-info-table-01">LEER</a></td>
+                                    <td><i class="fas fa-times"></i></td>
+                                </tr>
+                                <tr class="info-hide">
+                                    <td colspan="6">
+                                        <div class="modal-read-table collapse" id="read-info-table-01">
+                                            <div class="card card-body">
+                                                <label class="label label-default" for="field-01">USUARIO <span>KEBE8</span> | DICE: <p></p></label>
+                                                <label class="label label-default" for="field-msg"><span>MENSAJE:</span>"SOLO SE PERMITEN 20 CARACTERES"</label>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>88775</td>
+                                    <td>Banquea</td>
+                                    <td>HIP/CAR/CAB/JUG</td>
+                                    <td>1.000,00</td>
+                                    <td><a href="#read-info-table-02" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="read-info-table-02">LEER</a></td>
+                                    <td><i class="fas fa-times"></i></td>
+                                </tr>
+                                <tr class="info-hide">
+                                    <td colspan="6">
+                                        <div class="modal-read-table collapse" id="read-info-table-02">
+                                            <div class="card card-body">
+                                                <label class="label label-default" for="field-01">USUARIO <span>KEBE8</span> | DICE: <p></p></label>
+                                                <label class="label label-default" for="field-msg"><span>MENSAJE:</span>"SOLO SE PERMITEN 20 CARACTERES"</label>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="event-board" tabindex="-1" role="dialog" aria-labelledby="event-board" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="box-content-modal">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th class="aviso">TICKET</th>
+                                    <th class="fecha">TIPO</th>
+                                    <th class="control">DETALLE</th>
+                                    <th class="control">MONTO</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><a href="#">888888</a></td>
+                                    <td>Banquea</td>
+                                    <td>HIP/CAR/CAB/JUG</td>
+                                    <td>1.000,00</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">888888</a></td>
+                                    <td>Banquea</td>
+                                    <td>HIP/CAR/CAB/JUG</td>
+                                    <td>1.000,00</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">888888</a></td>
+                                    <td>Banquea</td>
+                                    <td>HIP/CAR/CAB/JUG</td>
+                                    <td>1.000,00</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">888888</a></td>
+                                    <td>Banquea</td>
+                                    <td>HIP/CAR/CAB/JUG</td>
+                                    <td>1.000,00</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">888888</a></td>
+                                    <td>Banquea</td>
+                                    <td>HIP/CAR/CAB/JUG</td>
+                                    <td>1.000,00</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">888888</a></td>
+                                    <td>Banquea</td>
+                                    <td>HIP/CAR/CAB/JUG</td>
+                                    <td>1.000,00</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">888888</a></td>
+                                    <td>Banquea</td>
+                                    <td>HIP/CAR/CAB/JUG</td>
+                                    <td>1.000,00</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">888888</a></td>
+                                    <td>Banquea</td>
+                                    <td>HIP/CAR/CAB/JUG</td>
+                                    <td>1.000,00</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">888888</a></td>
+                                    <td>Banquea</td>
+                                    <td>HIP/CAR/CAB/JUG</td>
+                                    <td>1.000,00</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">888888</a></td>
+                                    <td>Banquea</td>
+                                    <td>HIP/CAR/CAB/JUG</td>
+                                    <td>1.000,00</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">888888</a></td>
+                                    <td>Banquea</td>
+                                    <td>HIP/CAR/CAB/JUG</td>
+                                    <td>1.000,00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="reporte"></div>
+    <div class="container box-general">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <div class="dropdown open">
+                    <button class="btn btn-secondary btn-block dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span id="location">LOCACION</span>
+                    </button>
+                    <div id="dlLocacion" class="category1 dropdown-menu btn-block" aria-labelledby="dropdownMenu1">
+                        @*<a class="dropdown-item" href="#american" data-value="Americana" data-url="@Url.Action("CargarHipodromos","Home")" onclick="ddlLocation_onclick(this,event)">Americana</a>
+                            <a class="dropdown-item" href="#nacional" data-value="Nacionales" data-url="@Url.Action("CargarHipodromos","Home")" onclick="ddlLocation_onclick(this,event)">Nacionales</a>*@
+                        @*<a class="dropdown-item" href="#deportte">DEPORTE</a>*@
+                    </div>
+                </div>
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">RETROSPECTOS </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">RESULTADOS</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav mr-5">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#" data-toggle="modal" data-target="#msg-board">CORREO <i class="far fa-envelope" data-toggle="modal" data-target="#msg-board"></i></a>
+                    </li>
+                </ul>
+                <a class="navbar-brand" href="@Url.Action("Logout","Home")">GRUPO PITAZO 25</a>
+            </div>
+        </nav>
+        <section>
+            @RenderBody()
+        </section>
+    </div>
+
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/popper.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/jquery.blockUI.js"></script>
+    <script src="~/js/imask.js"></script>
+    <script src="~/js/sweetalert2.all.min.js"></script>
+    <script>
+        $('.card.board-horse input[type="radio"]').css('background-color', 'red');
+
+
+
+
+        $('.btn.btn-link.rk-header.title').click(function (event) {
+            console.log('click')
+            let checkCollapseOpenOrClose = $(this).hasClass('collapsed')
+            console.log(checkCollapseOpenOrClose)
+            if (checkCollapseOpenOrClose === false) {
+                let findIconAddPlus = $(this).find('.btn-icon-collapse.fa-minus').removeClass('fa-minus').addClass('fa-plus');
+            } else {
+                let findIconAddMinus = $(this).find('.btn-icon-collapse.fa-plus').removeClass('fa-plus').addClass('fa-minus');
+            }
+
+            // let changeiconbars = (checkCollapseOpenOrClose === false) ? console.log(findIconAddPlus) : console.log(findIconAddMinus);
+            // let changeiconbars = (checkCollapseOpenOrClose === false) ? findIconAddPlus : findIconAddMinus;
+            // let rk_number  = (setNumber >= 0 && setNumber < 6) ? setNumber = setNumber + 1 : setNumber=0;
+
+        });
+      
+    </script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

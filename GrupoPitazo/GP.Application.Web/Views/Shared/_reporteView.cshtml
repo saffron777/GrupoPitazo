@@ -1,0 +1,41 @@
+﻿@using GP.Core.Models.ViewModels
+@model List<ReporteViewModel>
+<div class="modal fade" id="report-board" tabindex="-1" role="dialog" aria-labelledby="report-board" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <div class="box-content-modal">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th class="aviso">TICKET</th>
+                                <th class="fecha">TIPO</th>
+                                <th class="control">DETALLE</th>
+                                <th class="control">MONTO</th>
+                                <th class="control">COMISION</th>
+                                <th class="control">ESTATUS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                           
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td><a href="#">@item.Ticket</a></td>
+                                    <td>@item.Tipo</td>
+                                    <td>@item.Detalle</td>
+                                    <td>@item.Monto.ToString("n")</td>
+                                    <td>@item.Comision.ToString("n")</td>
+                                    <td>@item.Status</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
